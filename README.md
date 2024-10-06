@@ -33,36 +33,42 @@ Before running the application, make sure you have the following installed:
 
    ```bash
    git clone https://github.com/mohdddd/contacts.git
-   cd contactss
-Install server-side dependencies:
+   cd contacts
+    ```
+
+   # Install server-side dependencies:
 
    ```bash
    cd contacts-backend
    npm install
-# Install client-side dependencies:
+  # Install client-side dependencies:
 
    ```bash
    cd ../contacts-frontend
    npm install
-# Running the Application
+```
+ # Running the Application
 Start MongoDB:
 
 If you're running MongoDB locally, ensure that it is running:
 
    ```bash
    mongod
+```
 
 # Run the backend server:
 
    ```bash
    cd contacts-backend
    npm start
+```
 
 # Run the frontend Angular application:
 
 ```bash
    cd contacts-frontend
    ng serve
+```
 
 Navigate to http://localhost:4200 in your browser to access the application.
 
