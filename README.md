@@ -92,6 +92,6 @@ The application uses Socket.io for real-time communication. When a user starts e
 
 Screenshots
 
-![Mini Contacts]((https://github.com/mohdddd/contacts/blob/master/screenshot.png?raw=true)"Mini Contacts")
+![Mini Contacts]((https://github.com/mohdddd/contacts/blob/master/screenshot.png?raw=true) "Mini Contacts")
 License
 This project is licensed under the GNU License - see the LICENSE file for details.
