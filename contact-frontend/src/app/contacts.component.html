@@ -1,0 +1,87 @@
+<div class="contacts-container">
+<h2>Minimal Contacts App</h2>
+  <!-- Form to Add New Contact -->
+<mat-card>
+  <mat-card-title >Add New Contact</mat-card-title>
+  <mat-card-content>
+    <form >
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="name" name="name" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput [(ngModel)]="phone" name="phone" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput [(ngModel)]="address" name="address">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Notes</mat-label>
+        <input matInput [(ngModel)]="notes" name="notes" >
+      </mat-form-field>
+
+      <button mat-button color="primary" (click)="submit()">Add Contact</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- Contacts List (Grid, Pagination, etc.) -->
+<mat-card>
+  <mat-card-title>Contacts List</mat-card-title>
+ 
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+
+        <td mat-cell *matCellDef="let contact"> {{contact.name}} </td>
+      </ng-container>
+  
+      <!-- Phone Column -->
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.phone}} </td>
+      </ng-container>
+  
+      <!-- Address Column -->
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.address}} </td>
+      </ng-container>
+  
+      <!-- Notes Column -->
+      <ng-container matColumnDef="notes">
+        <th mat-header-cell *matHeaderCellDef> Notes </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.notes}} </td>
+      </ng-container>
+  
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let contact">
+          <button mat-button color="primary" (click)="lockContact(contact._id)" [disabled]="contact._id === lockedContactId">
+            Edit
+          </button>
+          <button mat-button color="warn" (click)="deleteContact(contact._id)">
+            Delete
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements">
+</mat-paginator>
+</mat-card>
+  </div>
+  
