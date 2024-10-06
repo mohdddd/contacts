@@ -32,40 +32,38 @@ Before running the application, make sure you have the following installed:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/contact-manager-app.git
-   cd contact-manager-app
+   git clone https://github.com/mohdddd/contacts.git
+   cd contactss
 Install server-side dependencies:
 
-bash
-Copy code
-cd backend
-npm install
-Install client-side dependencies:
+   ```bash
+   cd contacts-backend
+   npm install
+# Install client-side dependencies:
 
-bash
-Copy code
-cd ../frontend
-npm install
-Running the Application
+   ```bash
+   cd ../contacts-frontend
+   npm install
+# Running the Application
 Start MongoDB:
 
 If you're running MongoDB locally, ensure that it is running:
 
-bash
-Copy code
-mongod
-Run the backend server:
+   ```bash
+   mongod
 
-bash
-Copy code
-cd backend
-npm start
-Run the frontend Angular application:
+# Run the backend server:
 
-bash
-Copy code
-cd frontend
-ng serve
+   ```bash
+   cd contacts-backend
+   npm start
+
+# Run the frontend Angular application:
+
+```bash
+   cd contacts-frontend
+   ng serve
+
 Navigate to http://localhost:4200 in your browser to access the application.
 
 Login Details
@@ -73,16 +71,21 @@ The app has two hardcoded users for testing:
 
 Username: user1, Password: user1
 Username: user2, Password: user2
+
 API Endpoints
+
 GET /contacts: Retrieve all contacts with pagination.
+
 POST /contacts: Add a new contact.
-PUT /contacts/:id: Update a contact.
+
 DELETE /contacts/:id: Delete a contact.
+
 Real-Time Communication
+
 The application uses Socket.io for real-time communication. When a user starts editing a contact, it is "locked" for other users, and they cannot edit it until the first user finishes.
 
 Screenshots
-Add screenshots of the app here (optional).
 
+![Mini Contacts]((https://github.com/mohdddd/contacts/blob/master/screenshot.png?raw=true)"Mini Contacts")
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the GNU License - see the LICENSE file for details.
